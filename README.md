@@ -3,11 +3,11 @@
 ###### ICS4U - Mr. Brash 🐿️
 
 #### Table of Contents
-- [Bubble Sort](#bubble-sort)
+- [Bubble Sort Code](#bubble-sort)
 - [Your Task](./SHAKER.md)
 - [Discussion Questions & Code Submission](https://classroom.google.com)
 
-Don't forget you can utilize the `library.js` file to help generate large arrays of various types of data. If you notice any errors or have suggestions for it - let me know!
+Don't forget you can use `library.js` to help generate large arrays of various types of data. If you notice any errors or have suggestions for it - let me know!
 
 ### Bubble Sort
 
@@ -18,17 +18,18 @@ Here is an animation of _Bubble Sort_.
 |<div style="font-size:smaller">Bubble Sort Animation [Swfung8](https://commons.wikimedia.org/w/index.php?curid=14953478) / [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0)</div>|
 
 
-It is a "sliding window algorithm" that is typically _not_ used due to the number of array accesses and swaps.
+It is a "sliding window algorithm" that is typically _not_ used due to the number of passes, array accesses and value swaps.
 
 After each _pass_ of the algorithm, the largest item has “bubbled” its way to the top (right), allowing us to ignore that item on subsequent passes.
 
-- Starting at the first two items, compare them
-- Swap them, if necessary
+**Details**:
+- Start at the first two items, compare them
+- If necessary, swap them
 - Move the window one to the right
 - Repeat
-- After each pass, start one further to the right than before
+- After each complete pass, start one further to the right and end of less than before
 
-The following is an implementation in JavaScript (you can also find it in your [script.js](script.js) file). It will run until `sorted` is `true` after a complete pass _or_ the sort window was reduced to a length of zero (variable `top`).
+The following is an implementation in JavaScript (you can also find one in your [script.js](script.js) file). It will run until `sorted` is `true` _or_ the sort window was reduced to a length of zero (variable `top`).
 ```JS
 function bubbleSort(unsortedArray) {
   let list = Array.from(unsortedArray); 
