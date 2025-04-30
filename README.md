@@ -3,8 +3,8 @@
 ###### ICS4U - Mr. Brash 🐿️
 
 #### Table of Contents
-- [Bubble Sort Code](#bubble-sort)
-- [Your Task](./SHAKER.md)
+- [Bubble Sort Explanation](#bubble-sort)
+- [Your Task](./SHAKER.md) (Shaker Sort)
 - [Discussion Questions & Code Submission](https://classroom.google.com)
 
 Don't forget you can use `library.js` to help generate large arrays of various types of data. If you notice any errors or have suggestions for it - let me know!
@@ -32,43 +32,31 @@ After each _pass_ of the algorithm, the largest item has “bubbled” its way t
 The following is an implementation in JavaScript (you can also find one in your [script.js](script.js) file). It will run until `sorted` is `true` _or_ the sort window was reduced to a length of zero (variable `top`).
 ```JS
 function bubbleSort(unsortedArray) {
-  let list = Array.from(unsortedArray); 
-  let sorted = false;  // stop when the list is sorted
-  for (let top = list.length - 1; top > 0 && sorted == false; top--) {
-    sorted = true;  // Assume it is sorted, unless a swap happens
+  let data = Array.from(unsortedArray); 
+  let sorted = false;  // stop when the data is sorted
+  let top = data.length - 1;
+  let temp;
+  while (top > 0 && !sorted) {
+      sorted = true;  // Assume it is sorted, unless a swap happens
 
-    // Go through the remaining items and swap when needed
-    for (let i = 0; i < top; i++) {
-      if (list[i] > list[i+1]) {
-        sorted = false; // a swap was required
-        let temp = list[i];
-        list[i] = list[i+1];
-        list[i+1] = temp;
+      // Go through the remaining items and swap when needed
+      for (let i = 0; i < top; i++) {
+          if (data[i] > data[i+1]) {
+              sorted = false; // a swap was required
+              temp = data[i];
+              data[i] = data[i+1];
+              data[i+1] = temp;
+          }
       }
-    }
+      top--;
   }
 }
 ```
 
-### Discussion Questions:
-Answer the following discussion questions.
-
-1. Show the swaps that would take place in using a bubble sort algorithm to organize the following data alphabetically. Decide how to organize your answer using HTML. Alternatively, you could insert an image to your HTML page that displays the answer.
-
-		D	H	D	A	G	F
+- ➡️ [Your Task](./SHAKER.md) (Shaker Sort)
+- [Discussion Questions & Code Submission](https://classroom.google.com)
 
 
-2. What change(s) would need to be made to the provided `bubbleSort()` code to make it sort values in descending order?
+<br>
 
-3. Are bubble sort and shaker sort “stable”? Explain your reasoning.
-
-4. Which algorithm, `insertSort()` or `shakerSort()`, would be more efficient to sort the array below:
-
-		[7, 9, 6, 8, 3, 5]
-
-    Explain your reasoning.
-<br><br>
-
-<hr>
-
-**Remember to push your work back to GitHub when you are done!**
+🐿️

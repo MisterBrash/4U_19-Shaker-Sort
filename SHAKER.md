@@ -1,6 +1,6 @@
 # Shaker Sort
 
-[Back to the README](README.md)
+🔙 [to the README](README.md)
 
 
 A _variation_ of the bubble sort algorithm is the **cocktail shaker sort**. It works like this:
@@ -17,13 +17,13 @@ A _variation_ of the bubble sort algorithm is the **cocktail shaker sort**. It w
 
 # Coding Task:  
 
-Write the function `shakerSort(unsortedArray, debug)` to implement the [cocktail shaker sort](https://www.geeksforgeeks.org/cocktail-sort/)  algorithm ([visualization](https://www.youtube.com/watch?v=njClLBoEbfI)). It should return an array of values sorted into ascending order.
+Write the function `shaker_sort(unsortedArray, debug)` to implement the [cocktail shaker sort](https://www.geeksforgeeks.org/cocktail-sort/)  algorithm ([visualization](https://www.youtube.com/watch?v=njClLBoEbfI)). It should return an array of values sorted into ascending order.
 
-Your code goes in [script.js](script.js) and you should start on line 28.
+Your code goes in [script.js](script.js) and you should start on line 30.
 
-The `debug` flag, if `true`, will cause your function to keep track of the _number of passes_ **and** the _number of swaps_. A _pass_ is once the function completes either a right or a left direction. A _swap_ is any time values in the array _change places_. Once complete, the function will return the sorted array and print to the console the number of passes and the number of swaps. For an example, read the `bubbleSort()` code and test using the `test_bubble()` function.
+The `debug` flag, if `true`, will cause your function to keep track of the _number of passes_ **and** the _number of swaps_. A _pass_ is once the function completes _either_ a right or a left direction. A _swap_ is whenever two values in the array _change places_. Once complete, the function will _return_ the sorted array and print to the console the number of passes and the number of swaps. For a thorough example, read the `bubble_sort()` code and run some tests using the `test_bubble()` function.
 
-**Example:** Partial output for `shakerSort(arrayOfInts(5, 1, 10), true)`
+**Example:** Theoretical output for `shaker_sort(arrayOfInts(5, 1, 10), true)`
 ```
 Given array: [5, 1, 4, 2, 8, 0, 2]
 Sorted array: [0, 1, 2, 2, 4, 5, 8]
@@ -33,10 +33,13 @@ Swaps: 12
 
 **Note** - you can also test by passing a hard-coded array: 
 ```JS
-shakerSort([6, 3, 5, 8, 2])
+shaker_sort([6, 5, 3, 1, 8, 7, 2, 4])
 ```
 
-<br><br>
-<hr>
+After coding the algorithm, don't forget to submit the code in both Github _and_ the Google Doc. Then complete [the discussion questions](https://classroom.google.com).
 
-After coding the algorithm, don't forget to complete [the discussion questions](README.md#discussion-questions).
+<br>
+
+🔙 [to the README](README.md)
+
+🐿️

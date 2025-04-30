@@ -1,9 +1,10 @@
 /**
- *  ICS4U with Mr. Brash 🐿️
+ * ICS4U with Mr. Brash 🐿️
  * 
- *  19 - Shaker Sort
+ * 19 - Shaker Sort
+ * Read through the README.md and SHAKER.md files.
  *
- *  Author:
+ * Author:
  * 
  **/
 
@@ -19,7 +20,7 @@ import { performance } from "perf_hooks";
  * @param {boolean} debug Whether or not to print debug information
  * @returns {Array} A sorted copy of the given unsortedArray
  */
-function shakerSort(unsortedArray, debug = false) {
+function shaker_sort(unsortedArray, debug = false) {
   // The copy of the array and get timing
   let data = Array.from(unsortedArray);
   const start = performance.now();
@@ -42,43 +43,47 @@ function shakerSort(unsortedArray, debug = false) {
  * @param {Array} unsortedArray The data to be sorted
  * @returns {Array} A sorted copy of the given unsortedArray
  */
-function bubbleSort(unsortedArray, debug = false) {
-  let list = Array.from(unsortedArray);
-  let sorted = false;
-
+function bubble_sort(unsortedArray, debug = false) {
+  let data = Array.from(unsortedArray);
+  
   // Time the function
   const start = performance.now();
   let passes = 0;
   let swaps = 0;
-
+  
   // START!
-  for (let top = list.length - 1; top > 0 && sorted == false; top--) {
+  let sorted = false;
+  let top = data.length - 1;
+  let temp;
+  while (top > 0 && !sorted) {
     sorted = true; // Assume sorted unless a swap happens
 
     // Go through the remaining items and swap, if needed
     for (let i = 0; i < top; i++) {
-      if (list[i] > list[i + 1]) {
+      if (data[i] > data[i + 1]) {
         // a swap is required, so it's not sorted - perform the swap
         sorted = false; 
-        let temp = list[i];
-        list[i] = list[i + 1];
-        list[i + 1] = temp;
+        temp = data[i];
+        data[i] = data[i + 1];
+        data[i + 1] = temp;
         swaps++;
       }
     }
     // A pass is finished
     passes++;
+    top--;
   }
-  // The debug print should remain right before the return statement
+
+  // Print out some stats if debug is true
   if (debug) {
     const end = performance.now() - start;
     console.log("Given array: " + unsortedArray);
-    console.log("Sorted array: " + list);
+    console.log("Sorted array: " + data);
     console.log("Passes: " + passes);
     console.log("Swaps: " + swaps);
-    console.log("Sorting " + list.length + " items took: " + round(end, 2) + " ms");
+    console.log("Sorting " + data.length + " items took: " + round(end, 2) + " ms");
   }
-  return list;
+  return data;
 }
 
 /**
@@ -87,5 +92,5 @@ function bubbleSort(unsortedArray, debug = false) {
  */
 function test_bubble(qty) {
   // Sort it using Bubble Sort and show debug data
-  bubbleSort(arrayOfInts(qty,1,qty,true,true), true);
+  bubble_sort(arrayOfInts(qty,1,qty,true,true), true);
 }
