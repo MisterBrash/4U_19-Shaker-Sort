@@ -165,7 +165,7 @@ export function arrayOfStrings(length, maxStrLength, letterCase) {
  * @param {String} target - the string to hide must not be an empty string.
  * @returns {Array} A sorted array of strings with the target included only once
  */
-export function hide_string(length, target) {
+export function hideString(length, target) {
   if (length < 5) return -1;
   if (!target) return -1;
 
